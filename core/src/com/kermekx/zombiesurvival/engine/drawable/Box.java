@@ -27,24 +27,24 @@ public class Box extends BaseDrawable {
 				Usage.Position | Usage.Normal | Usage.TextureCoordinates));
 	}
 
-	public Box(float x, float y, float width, float height, float depth, Color color) {
+	public Box(float x, float y, float z, float width, float height, float depth, Color color) {
 		super(modelBuilder.createBox(width, height, depth, new Material(ColorAttribute.createDiffuse(color)),
 				Usage.Position | Usage.Normal));
-		getInstance().transform.translate(x, y, 0);
+		getInstance().transform.translate(x, y, z);
 	}
 
-	public Box(float x, float y, float width, float height, float depth, Texture texture) {
+	public Box(float x, float y, float z, float width, float height, float depth, Texture texture) {
 		super(modelBuilder.createBox(width, height, depth,
 				new Material(TextureAttribute.createDiffuse(texture)),
 				Usage.Position | Usage.Normal | Usage.TextureCoordinates));
-		getInstance().transform.translate(x, y, 0);
+		getInstance().transform.translate(x, y, z);
 	}
 
-	public Box(float x, float y, float width, float height, float depth, TextureRegion texture) {
+	public Box(float x, float y, float z, float width, float height, float depth, TextureRegion texture) {
 		super(modelBuilder.createBox(width, height, depth,
 				new Material(TextureAttribute.createDiffuse(texture)),
 				Usage.Position | Usage.Normal | Usage.TextureCoordinates));
-		getInstance().transform.translate(x, y, 0);
+		getInstance().transform.translate(x, y, z);
 	}
 
 }

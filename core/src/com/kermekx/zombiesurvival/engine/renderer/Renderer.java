@@ -40,7 +40,8 @@ public class Renderer {
 		if (scene == null)
 			return;
 
-		time += Gdx.graphics.getDeltaTime() * 10000;
+		float delta = Gdx.graphics.getDeltaTime();
+		time += delta * 100;
 		scene.getCamera().setTime(time);
 		
 		Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -58,8 +59,13 @@ public class Renderer {
 
 		modelBatch.end();
 		
+		int h = (int) (time % 86400) / 3600;
+		int m = (int) (time % 3600) / 60;
+		int s = (int) (time % 60);
+		
 		fps.setLength(0);
 		fps.append(" FPS : ").append(Gdx.graphics.getFramesPerSecond());
+		fps.append(" " + h + "h " + m + "m " + s + "s");
 		labelFps.setText(fps);
 		stage.draw();
 	}

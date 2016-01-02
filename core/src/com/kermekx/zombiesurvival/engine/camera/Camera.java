@@ -23,7 +23,7 @@ public class Camera {
 		environment = new Environment();
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1f));
         environment.add(sun);
-        //environment.add(new PointLight().set(1f, 0f, 0f, 0, 0, -10, 500000f));
+        //environment.add(new PointLight().set(1f, 0f, 0f, 1000, 0, -10, 100000f));
         
         setTime(43200);
 	}
@@ -39,7 +39,7 @@ public class Camera {
 	public void setPosition(float x, float y) {
 		this.x = x;
 		this.y = y;
-		camera.position.set(x, y, -256f);
+		camera.position.set(x, y, 256f);
 		camera.lookAt(x, y, 0);
 		camera.update();
 	}

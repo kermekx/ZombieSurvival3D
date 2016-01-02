@@ -26,11 +26,11 @@ public class ZombieSurvival extends ApplicationAdapter {
 		Scene scene = new Scene() {
 		};
 		
-		scene.addDrawable(new Box(0, 0, 2048f, 2048f, 1f, TerrainTexture.DIRT.getTextureRegion(2048, 2048)));
-		scene.addDrawable(new Box(0, -256, 1024f, 16f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024)));
-		scene.addDrawable(new Box(0, 256, 1024f, 16f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024)));
-		scene.addDrawable(new Box(-512, 0, 16f, 512f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512)));
-		scene.addDrawable(new Box(512, 0, 16f, 512f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512)));
+		scene.addDrawable(new Box(0, 0, -0.5f, 4096f, 4096f, 1f, TerrainTexture.GRASS.getTextureRegion(4096, 4096)));
+		scene.addDrawable(new Box(0, -256f, 32f, 1040f, 16f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024)));
+		scene.addDrawable(new Box(0, 256, 32f, 1040f, 16f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024)));
+		scene.addDrawable(new Box(-512, 0, 32f, 16f, 528f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512)));
+		scene.addDrawable(new Box(512, 0, 32f, 16f, 528f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512)));
 		
 		renderer.setScene(scene);
 	}
