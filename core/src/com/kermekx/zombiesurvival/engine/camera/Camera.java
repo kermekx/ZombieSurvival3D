@@ -15,7 +15,7 @@ public class Camera {
 	private float x = 0, y = 0;
 	
 	public Camera() {
-		camera = new PerspectiveCamera(512, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		camera = new PerspectiveCamera(128, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		camera.near = 1f;
 		camera.far = 300f;
 		setPosition(x, y);
@@ -58,7 +58,7 @@ public class Camera {
 	}
 	
 	public void resize(int width, int height) {
-		camera = new PerspectiveCamera(512, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		camera = new PerspectiveCamera(128, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		camera.near = 1f;
 		camera.far = 300f;
 		setPosition(x, y);
