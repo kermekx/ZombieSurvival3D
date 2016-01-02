@@ -44,11 +44,15 @@ public class Camera {
 		camera.update();
 	}
 	
+	public void translate(float x, float y) {
+		setPosition(this.x + x, this.y + y);
+	}
+	
 	public void setTime(long time) {
 		long suneTime = (time + 21600) % 86400;
 		
 		float sunX = (float) (Math.cos(suneTime * Math.PI * 2 / 86400));
-		float sunY = (float) -(Math.sin(suneTime * Math.PI * 2 / 86400));
+		float sunY = (float) (Math.sin(suneTime * Math.PI * 2 / 86400));
 		
 		sun.set(0.8f, 0.8f, 0.8f, sunX, 0.2f, sunY);
 	}
