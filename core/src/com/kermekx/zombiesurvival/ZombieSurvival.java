@@ -31,6 +31,7 @@ public class ZombieSurvival extends ApplicationAdapter {
 		scene.addDrawable(new Box(0, 256, 32f, 1040f, 16f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024)));
 		scene.addDrawable(new Box(-512, 0, 32f, 16f, 528f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512)));
 		scene.addDrawable(new Box(512, 0, 32f, 16f, 528f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512)));
+		scene.addDrawable(new Box(0, 0, 0.5f, 1024f, 512f, 1f, TerrainTexture.DARK_WOOD.getTextureRegion(1024, 512)));
 		
 		renderer.setScene(scene);
 	}

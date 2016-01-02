@@ -7,7 +7,7 @@ import com.kermekx.zombiesurvival.engine.texture.TextureManager;
 
 public enum TerrainTexture {
 
-	DIRT("dirt"), GRASS("grass"), STONE_BRICK_WHITE("stone_brick_white");
+	DIRT("dirt"), DARK_WOOD("dark_wood"), GRASS("grass"), STONE_BRICK_WHITE("stone_brick_white");
 
 	private static final String TEXTURES_PATH = "textures/";
 	private static final String IMAGE_FORMAT = ".png";
