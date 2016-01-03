@@ -44,6 +44,16 @@ public class Camera {
 		camera.lookAt(x, y, 0);
 		camera.update();
 	}
+	
+	public void setPosition(float x, float y, float angle) {
+		this.x = x;
+		this.y = y;
+		this.angle = 90;
+		camera.position.set(x, y - 126f, 512f);
+		camera.lookAt(x, y, 0);
+		camera.update();
+		rotate(angle - 90);
+	}
 
 	public void translate(float x, float y) {
 		double radian = Math.toRadians(angle);
@@ -80,6 +90,6 @@ public class Camera {
 
 		camera.near = 1f;
 		camera.far = 1000f;
-		setPosition(x, y);
+		setPosition(x, y, angle);
 	}
 }
