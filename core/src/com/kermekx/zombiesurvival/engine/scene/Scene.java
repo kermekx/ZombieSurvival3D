@@ -3,12 +3,14 @@ package com.kermekx.zombiesurvival.engine.scene;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.kermekx.zombiesurvival.engine.camera.Camera;
 import com.kermekx.zombiesurvival.engine.drawable.Drawable;
 
 public abstract class Scene {
 	
-	Camera camera = new Camera();
+	protected Stage stage = new Stage();
+	protected Camera camera = new Camera();
 	
 	private List<Drawable> drawables = new ArrayList<Drawable>();
 	
@@ -23,5 +25,11 @@ public abstract class Scene {
 	public List<Drawable> getDrawables() {
 		return drawables;
 	}
+	
+	public Stage getStage() {
+		return stage;
+	}
+	
+	public abstract boolean update(float delta);
 
 }

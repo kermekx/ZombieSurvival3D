@@ -23,7 +23,6 @@ public class Camera {
 		environment = new Environment();
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1f));
         environment.add(sun);
-        //environment.add(new PointLight().set(1f, 0f, 0f, 1000, 0, -10, 100000f));
         
         setTime(43200);
 	}
