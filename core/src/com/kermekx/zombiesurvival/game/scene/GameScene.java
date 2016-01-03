@@ -22,12 +22,12 @@ public class GameScene extends Scene {
 
 	public GameScene() {
 		addEntity(player);
-		addDrawable(new Box(0, 0, -0.5f, 4096f, 4096f, 1f, TerrainTexture.GRASS.getTextureRegion(4096, 4096)));
+		addDrawable(new Box(0, 0, -2f, 4096f, 4096f, 4f, TerrainTexture.GRASS.getTextureRegion(4096, 4096)));
 		addEntity(new Decoration(this, new Box(0, -256f, 32f, 1040f, 16f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024))));
 		addEntity(new Decoration(this, new Box(0, 256, 32f, 1040f, 16f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024))));
 		addEntity(new Decoration(this, new Box(-512, 0, 32f, 16f, 528f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512))));
 		addEntity(new Decoration(this, new Box(512, 0, 32f, 16f, 528f, 64f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512))));
-		addDrawable(new Box(0, 0, 0.5f, 1024f, 512f, 1f, TerrainTexture.DARK_WOOD.getTextureRegion(1024, 512)));
+		addDrawable(new Box(0, 0, 2.5f, 1024f, 512f, 5f, TerrainTexture.DARK_WOOD.getTextureRegion(1024, 512)));
 	}
 
 	@Override
@@ -36,13 +36,13 @@ public class GameScene extends Scene {
 		getCamera().setTime(time);
 
 		if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || Gdx.input.isKeyPressed(Input.Keys.Q)) {
-			if (player.translate(-delta * 100, 0, 0) == null)
-				getCamera().translate(-delta * 100, 0);
+			if (player.rotate(delta * 100) == null)
+				getCamera().rotate(delta * 100);
 		}
 
 		if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) || Gdx.input.isKeyPressed(Input.Keys.D)) {
-			if (player.translate(delta * 100, 0, 0) == null)
-			getCamera().translate(delta * 100, 0);
+			if (player.rotate(-delta * 100) == null)
+			getCamera().rotate(-delta * 100);
 		}
 
 		if (Gdx.input.isKeyPressed(Input.Keys.UP) || Gdx.input.isKeyPressed(Input.Keys.Z)) {
