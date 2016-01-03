@@ -8,6 +8,9 @@ public class Decoration extends Entity {
 	public Decoration(GameScene scene, Drawable drawable) {
 		super(scene, drawable);
 	}
-	
 
+	@Override
+	public void update(float delta) {
+		return;
+	}
 }

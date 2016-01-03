@@ -2,7 +2,7 @@ package com.kermekx.zombiesurvival.game.damage;
 
 public enum Resistance {
 	
-	INVISIBLE(0), NORMAL(1);
+	INVINSIBLE(0), NORMAL(1);
 	
 	private final float resistance;
 	

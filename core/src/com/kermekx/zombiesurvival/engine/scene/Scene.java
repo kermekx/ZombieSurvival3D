@@ -22,6 +22,10 @@ public abstract class Scene {
 		drawables.add(drawable);
 	}
 	
+	public void removeDrawable(Drawable drawable) {
+		drawables.remove(drawable);
+	}
+	
 	public List<Drawable> getDrawables() {
 		return drawables;
 	}
