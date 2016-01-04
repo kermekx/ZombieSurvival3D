@@ -1,6 +1,8 @@
 package com.kermekx.zombiesurvival.game.ai;
 
+import com.badlogic.gdx.math.Vector;
 import com.kermekx.zombiesurvival.game.entity.Entity;
+import com.kermekx.zombiesurvival.game.scene.GameScene;
 
 public class DropOnDeath extends BaseAI {
 
@@ -12,9 +14,9 @@ public class DropOnDeath extends BaseAI {
 		super(entity);
 		this.texture = texture;
 		this.entity = entity;
-		//this.size = entity.getHitbox().getSize();
+		//this.size = entity.getHitbox();
 	}
-	
+
 	public DropOnDeath(Entity entity, int texture, Vector size) {
 		super(entity);
 		this.texture = texture;
@@ -25,9 +27,10 @@ public class DropOnDeath extends BaseAI {
 	@Override
 	public void update(int delta) {
 		if (!entity.isAlive()) {
-			GameScene context = (GameScene) entity.getContext();
-			context.addEntity(new DeathEntity(context, entity.getPosition(), size, entity.getRotation(),
-					texture));
+			GameScene context = entity.getGameScene();
+			// context.addEntity(new DeathEntity(context, entity.getPosition(),
+			// size, entity.getRotation(),
+			// texture));
 		}
 	}
 }
