@@ -11,6 +11,7 @@ import com.kermekx.zombiesurvival.engine.scene.Scene;
 import com.kermekx.zombiesurvival.game.entity.Decoration;
 import com.kermekx.zombiesurvival.game.entity.Entity;
 import com.kermekx.zombiesurvival.game.entity.Player;
+import com.kermekx.zombiesurvival.game.model.GameModel;
 import com.kermekx.zombiesurvival.game.texture.TerrainTexture;
 
 public class GameScene extends Scene {
@@ -23,6 +24,9 @@ public class GameScene extends Scene {
 	public GameScene() {
 		addEntity(player);
 		addDrawable(new Box(0, 0, -0.1f, 256f, 256f, 0.2f, TerrainTexture.GRASS.getTextureRegion(4096, 4096)));
+		
+		addEntity(new Decoration(this, new Box(20f, 20f, 0f, GameModel.SCHOOL_BUS_WRECKED.getModel())));
+		/**
 		addEntity(new Decoration(this,
 				new Box(0, -10f, 2f, 10.5f, 0.5f, 4f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024))));
 		addEntity(new Decoration(this,
@@ -32,6 +36,7 @@ public class GameScene extends Scene {
 		addEntity(new Decoration(this,
 				new Box(5f, 0, 2f, 0.5f, 19.5f, 4f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(512, 512))));
 		addDrawable(new Box(0, 0, 0.1f, 10f, 20f, 0.2f, TerrainTexture.DARK_WOOD.getTextureRegion(1024, 512)));
+		 */
 	}
 
 	@Override
