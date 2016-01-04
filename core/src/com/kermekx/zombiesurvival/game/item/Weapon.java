@@ -13,8 +13,8 @@ public class Weapon extends Item {
 	private final int charger;
 	private int countShot = 0;
 
-	public Weapon(int id, int charger) {
-		super(id, false);
+	public Weapon(int id, GameModel model, int charger) {
+		super(id, model, false);
 		this.charger = charger;
 	}
 
