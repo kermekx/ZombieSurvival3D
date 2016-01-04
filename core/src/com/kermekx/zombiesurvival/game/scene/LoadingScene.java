@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.kermekx.zombiesurvival.ZombieSurvival;
 import com.kermekx.zombiesurvival.engine.scene.Scene;
+import com.kermekx.zombiesurvival.game.model.GameModel;
 import com.kermekx.zombiesurvival.game.texture.TerrainTexture;
 
 public class LoadingScene extends Scene {
@@ -17,6 +18,7 @@ public class LoadingScene extends Scene {
 	
 	public LoadingScene() {
 		TerrainTexture.values();
+		GameModel.values();
 		
 		font = new BitmapFont();
 		progressLabel = new Label(" ", new Label.LabelStyle(font, Color.WHITE));

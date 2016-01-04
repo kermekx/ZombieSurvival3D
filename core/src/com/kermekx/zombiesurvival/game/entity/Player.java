@@ -10,8 +10,8 @@ import com.kermekx.zombiesurvival.game.scene.GameScene;
 public class Player extends Entity {
 
 	public static int LIFE = 100;
-	public static float MOVEMENT_SPEED = 18f;
-	public static float ROTATION_SPEED = 180f;
+	public static float MOVEMENT_SPEED = 10f;
+	public static float ROTATION_SPEED = 140f;
 
 	private boolean walking = false;
 	private boolean run = false;
