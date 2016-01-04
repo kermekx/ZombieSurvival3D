@@ -16,9 +16,9 @@ public class Camera {
 	private float x = 0, y = 0, angle = 90;
 
 	public Camera() {
-		camera = new PerspectiveCamera(90, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		camera.near = 1f;
-		camera.far = 1000F;
+		camera = new PerspectiveCamera(64, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		camera.near = 0.1f;
+		camera.far = 300f;
 		setPosition(x, y);
 
 		environment = new Environment();
@@ -40,8 +40,8 @@ public class Camera {
 		this.x = x;
 		this.y = y;
 		this.angle = 90;
-		camera.position.set(x, y - 126f, 512f);
-		camera.lookAt(x, y, 0);
+		camera.position.set(x, y, 2f);
+		camera.lookAt(x, y + 0.1f, 2f);
 		camera.update();
 	}
 	
@@ -49,8 +49,8 @@ public class Camera {
 		this.x = x;
 		this.y = y;
 		this.angle = 90;
-		camera.position.set(x, y - 126f, 512f);
-		camera.lookAt(x, y, 0);
+		camera.position.set(x, y, 2f);
+		camera.lookAt(x, y + 0.1f, 2f);
 		camera.update();
 		rotate(angle - 90);
 	}
@@ -86,10 +86,10 @@ public class Camera {
 	}
 
 	public void resize(int width, int height) {
-		camera = new PerspectiveCamera(90, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		camera = new PerspectiveCamera(64, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
-		camera.near = 1f;
-		camera.far = 1000f;
+		camera.near = 0.1f;
+		camera.far = 300f;
 		setPosition(x, y, angle);
 	}
 }

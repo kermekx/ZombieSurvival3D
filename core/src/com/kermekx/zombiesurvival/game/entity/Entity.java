@@ -34,6 +34,10 @@ public abstract class Entity {
 	public Scene getScene() {
 		return scene;
 	}
+	
+	public GameScene getGameScene() {
+		return scene;
+	}
 
 	public Drawable getDrawable() {
 		return drawable;
@@ -143,6 +147,10 @@ public abstract class Entity {
 	public float getRotation() {
 		return rotation;
 	}
-
+	
+	public Vector3 getPosition() {
+		return new Vector3(hitbox.getCenterX(), hitbox.getCenterY(), hitbox.getCenterZ());
+	}
+	
 	public abstract void update(float delta);
 }
