@@ -1,5 +1,6 @@
 package com.kermekx.zombiesurvival.game.entity;
 
+import com.badlogic.gdx.graphics.g3d.utils.AnimationController;
 import com.badlogic.gdx.math.Vector3;
 import com.kermekx.zombiesurvival.engine.drawable.Box;
 import com.kermekx.zombiesurvival.engine.drawable.Drawable;
@@ -20,6 +21,7 @@ public class Player extends Entity {
 	private final Inventory inventory = new Inventory(32);
 
 	private Drawable itemInHand;
+	private AnimationController controller;
 
 	private float using = 0;
 
@@ -69,6 +71,10 @@ public class Player extends Entity {
 
 	public void fire(float time) {
 		using = time;
+		
+		if (itemInHand != null) {
+			//controller.queue("Gun_trigger", 1, 1, null, 0);
+		}
 	}
 
 	public void reload(float time) {
@@ -89,6 +95,8 @@ public class Player extends Entity {
 
 		itemInHand = new Box(position.x, position.y, 1.8f, item.getModel().getModel());
 		itemInHand.getInstance().transform.rotate(0, 0, 1, rotation).translate(0.4f, -0.25f, 0f);
+		
+		controller = new AnimationController(itemInHand.getInstance());
 
 		getScene().addDrawable(itemInHand);
 

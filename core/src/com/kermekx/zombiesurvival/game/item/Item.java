@@ -11,7 +11,7 @@ public class Item {
 		VOID(new Item(0, null)),
 		AMMO(new Item(1, null)),
 		//KNIFE(new SecondaryWeapon(10)),
-		HANDGUN(new Weapon(11, GameModel.AK47, 10)),
+		HANDGUN(new Weapon(11, GameModel.SMITH_AND_WESSON, 10)),
 		SAWEDOFF(new Weapon(12, GameModel.AK47, 6)),
 		AK47(new Weapon(13, GameModel.AK47, 20));
 		

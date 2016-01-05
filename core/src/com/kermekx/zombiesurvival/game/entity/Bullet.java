@@ -21,7 +21,7 @@ public class Bullet extends Entity {
 		if (lifeTime > 5000)
 			kill();
 		
-		Entity target = translate(delta * 50, 0f, 0f);
+		Entity target = translate(delta * 20, 0f, 0f);
 		if (target != null) {
 			target.damage(new Damage(this, DamageSource.BULLET, damage));
 			this.kill();

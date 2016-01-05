@@ -5,7 +5,7 @@ import com.kermekx.zombiesurvival.engine.model.ModelManager;
 
 public enum GameModel {
 
-	AK47("weapon/ak47/ak47"), BULLET("misc/bullet"), SCHOOL_BUS_WRECKED("decoration/bus/School_Bus_Wrecked");
+	AK47("weapon/ak47/ak47"), BULLET("misc/bullet"), SCHOOL_BUS_WRECKED("decoration/bus/School_Bus_Wrecked"), SMITH_AND_WESSON("weapon/smith_and_wesson/smith_and_wesson");
 
 	private static final String TEXTURES_PATH = "model/";
 	private static final String IMAGE_FORMAT = ".g3db";

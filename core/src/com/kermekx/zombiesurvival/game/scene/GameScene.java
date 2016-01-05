@@ -41,7 +41,7 @@ public class GameScene extends Scene {
 
 	@Override
 	public boolean update(float delta) {
-		time += delta * 100;
+		time += delta * 1000;
 		getCamera().setTime(time);
 
 		List<Entity> deadEntities = new ArrayList<Entity>();
