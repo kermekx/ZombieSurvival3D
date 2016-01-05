@@ -14,7 +14,6 @@ public class Player extends Entity {
 
 	public static int LIFE = 100;
 	public static float MOVEMENT_SPEED = 10f;
-	public static float ROTATION_SPEED = 140f;
 
 	private boolean walking = false;
 	private boolean run = false;
@@ -50,13 +49,27 @@ public class Player extends Entity {
 
 		return colide;
 	}
+	
+	public Entity strafe(float delta) {
+		if (using > 0)
+			return this;
+
+		walking = true;
+		Entity colide = translate(delta * MOVEMENT_SPEED, 0, 0);
+
+		if (colide == null && itemInHand != null) {
+			itemInHand.getInstance().transform.translate(0, -delta * MOVEMENT_SPEED, 0);
+		}
+
+		return colide;
+	}
 
 	@Override
 	public Entity rotate(float delta) {
-		Entity colide = super.rotate(delta * ROTATION_SPEED);
+		Entity colide = super.rotate(delta);
 
 		if (colide == null && itemInHand != null) {
-			itemInHand.getInstance().transform.translate(-0.4f, 0.25f, 0).rotate(0, 0, 1, delta * ROTATION_SPEED)
+			itemInHand.getInstance().transform.translate(-0.4f, 0.25f, 0).rotate(0, 0, 1, delta)
 					.translate(0.4f, -0.25f, 0);
 		}
 

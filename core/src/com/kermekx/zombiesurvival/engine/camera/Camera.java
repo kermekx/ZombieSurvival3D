@@ -58,7 +58,7 @@ public class Camera {
 	public void translate(float x, float y) {
 		double radian = Math.toRadians(angle);
 		float tx = (float) (x * Math.sin(radian) + y * Math.cos(radian));
-		float ty = (float) (y * Math.sin(radian) + x * Math.cos(radian));
+		float ty = (float) (y * Math.sin(radian) - x * Math.cos(radian));
 		this.x += tx;
 		this.y += ty;
 		

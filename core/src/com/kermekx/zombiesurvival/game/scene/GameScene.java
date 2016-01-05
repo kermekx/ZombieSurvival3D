@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
+import com.kermekx.zombiesurvival.controller.FirstPersonCameraController;
 import com.kermekx.zombiesurvival.engine.drawable.Box;
 import com.kermekx.zombiesurvival.engine.scene.Scene;
 import com.kermekx.zombiesurvival.game.entity.Decoration;
@@ -18,7 +18,8 @@ public class GameScene extends Scene {
 
 	private List<Entity> entities = new ArrayList<Entity>();
 	private Player player = new Player(this, new Box(0, 0, 1f, 1f, 1f, 2f, Color.RED));
-
+	private FirstPersonCameraController controller;
+	
 	private long time = 43200;
 
 	public GameScene() {
@@ -26,6 +27,10 @@ public class GameScene extends Scene {
 		addDrawable(new Box(0, 0, -0.1f, 256f, 256f, 0.2f, TerrainTexture.GRASS.getTextureRegion(4096, 4096)));
 		
 		addEntity(new Decoration(this, new Box(20f, 20f, 0f, GameModel.SCHOOL_BUS_WRECKED.getModel())));
+		
+		controller = new FirstPersonCameraController(this);
+	    Gdx.input.setInputProcessor(controller);
+	    
 		/**
 		addEntity(new Decoration(this,
 				new Box(0, -10f, 2f, 10.5f, 0.5f, 4f, TerrainTexture.STONE_BRICK_WHITE.getTextureRegion(1024, 1024))));
@@ -54,30 +59,8 @@ public class GameScene extends Scene {
 			}
 		}
 		entities.removeAll(deadEntities);
-
-		if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || Gdx.input.isKeyPressed(Input.Keys.Q)) {
-			if (player.rotate(delta) == null)
-				getCamera().rotate(delta * Player.ROTATION_SPEED);
-		}
-
-		if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) || Gdx.input.isKeyPressed(Input.Keys.D)) {
-			if (player.rotate(-delta) == null)
-				getCamera().rotate(-delta * Player.ROTATION_SPEED);
-		}
-
-		if (Gdx.input.isKeyPressed(Input.Keys.UP) || Gdx.input.isKeyPressed(Input.Keys.Z)) {
-			if (player.walk(delta) == null)
-				getCamera().translate(0, delta * Player.MOVEMENT_SPEED);
-		}
-
-		if (Gdx.input.isKeyPressed(Input.Keys.DOWN) || Gdx.input.isKeyPressed(Input.Keys.S)) {
-			if (player.walk(-delta) == null)
-				getCamera().translate(0, -delta * Player.MOVEMENT_SPEED);
-		}
-
-		if (Gdx.input.isKeyPressed(Input.Keys.ENTER)) {
-			player.use();
-		}
+		
+		controller.update(delta);
 
 		return true;
 	}
@@ -91,4 +74,7 @@ public class GameScene extends Scene {
 		return entities;
 	}
 
+	public Player getPlayer() {
+		return player;
+	}
 }
